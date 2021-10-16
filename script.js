@@ -32,7 +32,7 @@ function getEvents() {
         },
         "data": "{}"
     }
-
+//
 //FIX AJAX CALL
     ajax({
         "url": "https://api.bizzabo.com/api/events",
