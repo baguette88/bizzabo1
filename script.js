@@ -17,7 +17,7 @@ console.log('greeting User')
 
 
 $(document).ready(function(){
-    // getEvents()                                                     getEVENTS troubleshooting
+                                               
     let cl = (value) => console.log(value);
     cl("Jquery Active")
 let counter =  0
@@ -105,7 +105,6 @@ function getEvents() {
     }
     console.log("AJAX call...")
 
-    const requestCurrent = () => {
     $.ajax({
         "url": "https://api.bizzabo.com/api/events",
         "async": true,
@@ -125,8 +124,8 @@ function getEvents() {
     });
   
     console.log("call sent")
-}
-requestCurrent()
+
+
 }
     
 // getEvents()
@@ -217,6 +216,6 @@ function showCalendar(month, year) {
 }
 
 
-
+getEvents() //TROUBLESHOOT THIS FUNCTION
 
 })
