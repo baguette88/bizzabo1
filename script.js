@@ -1,30 +1,23 @@
-// console.log('script start...')
+console.log('script start...')
 let today = new Date();
 let hourNow = today.getHours();
 let greeting;
 
 if (hourNow > 5 > 24) {
     greeting = "<b>Good Evening, User<b>";
-    // add name as template literal
 }else if (hourNow >= 12) {
     greeting = "<b>Good Afternoon</b>";
 }else if (hourNow > 0 > 12) {
     greeting = '<b>Good Morning</b>';
-} else { greeting = 'Welcome (calculator error occured)';
-}
+} else { greeting = 'Welcome (calculator error occured)';}
 
 document.getElementById('lblGreetings').innerHTML =
 '<b>' + greeting + '</b> and Welcome to Bizzabo';
-
-console.log('pulled date successfully')
-
-// $(document).ready(function () {
-//     getEvents()
-// })
-///REACTIVATE TO PERFORM API CALL
+console.log('greeting User')
 
 
 $(document).ready(function(){
+    // getEvents()                                                     getEVENTS troubleshooting
     let cl = (value) => console.log(value);
     cl("Jquery Active")
 let counter =  0
@@ -32,8 +25,6 @@ let counter =  0
     $($div).addClass('title')
     $('body').append($div)
     $($div).text("This is the first div title")
-   // $($div).style.color("blue")
-//JQUERY HERE
 
 $(".generate").click(function btn1(){ //TITLE SCREEN
     // $(".scene").hide()
@@ -94,7 +85,7 @@ $($titleScene).show     // SHOW TITLE SCENE FIRST
            console.log("btn4")
            });  
 
-        })
+       
 
 function getEvents() {
 
@@ -103,6 +94,7 @@ function getEvents() {
         "crossDomain": true,
         "url": "https://api.bizzabo.com/api/events",
         "method": "GET",
+
         "Content-type": "application/x-www-form-urlencoded",
         "headers": {
             "accept": "application/vnd.bizzabo.v2.0+json",
@@ -111,8 +103,9 @@ function getEvents() {
         },
         "data": "{}"
     }
+    console.log("AJAX call...")
 
-
+    const requestCurrent = () => {
     $.ajax({
         "url": "https://api.bizzabo.com/api/events",
         "async": true,
@@ -124,11 +117,21 @@ function getEvents() {
             "accept": "application/vnd.bizzabo.v2.0+json",
             "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
             "Access-Control-Allow-Origin": "*",
+            
         }
     }).done(function (data) {
         console.log(data);
+        console.log("AJAX pull complete")
     });
+  
+    console.log("call sent")
 }
+requestCurrent()
+}
+    
+// getEvents()
+
+
 
 // let today = new Date();
 let currentMonth = today.getMonth();
@@ -210,4 +213,10 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
     }
 
+
 }
+
+
+
+
+})
