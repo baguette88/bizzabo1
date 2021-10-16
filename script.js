@@ -6,9 +6,9 @@ let greeting;
 if (hourNow > 18) {
     greeting = "<b>Good Evening, User<b>";
     // add name as template literal
-}else if (hourNow > 12) {
+}else if (hourNow >= 12) {
     greeting = "<b>Good Afternoon</b>";
-} else if (hourNow > 0) {
+} else if (hourNow > 0 > 12) {
     greeting = '<b>Good Morning</b>';
 } else { greeting = 'Welcome (calculator error occured)';
 }
