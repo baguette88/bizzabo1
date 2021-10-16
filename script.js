@@ -1,3 +1,4 @@
+console.log('script start...')
 let today = new Date();
 let hourNow = today.getHours();
 let greeting;
@@ -15,8 +16,15 @@ if (hourNow > 18) {
 document.getElementById('lblGreetings').innerHTML =
 '<b>' + greeting + '</b> and Welcome to Bizzabo';
 
+console.log('pulled date successfully')
 
-//AJAX call
+$(document).ready(function () {
+    getEvents()
+})
+
+
+
+
 function getEvents() {
 
     var settings = {
@@ -32,9 +40,9 @@ function getEvents() {
         },
         "data": "{}"
     }
-//
-//FIX AJAX CALL
-    ajax({
+
+
+    $.ajax({
         "url": "https://api.bizzabo.com/api/events",
         "async": true,
         "method": "GET",
@@ -50,6 +58,3 @@ function getEvents() {
         console.log(data);
     });
 }
-
-getEvents()
-//console.log(data)
